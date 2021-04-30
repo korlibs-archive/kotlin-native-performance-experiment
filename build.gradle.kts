@@ -1,6 +1,6 @@
 plugins {
-    kotlin("multiplatform") version "1.4.32"
-    //kotlin("multiplatform") version "1.5.0"
+    //kotlin("multiplatform") version "1.4.32"
+    kotlin("multiplatform") version "1.5.0"
     //kotlin("multiplatform") version "1.5.20-dev-5655"
     //kotlin("multiplatform") version "1.5.255-SNAPSHOT"
 }
