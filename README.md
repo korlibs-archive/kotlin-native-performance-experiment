@@ -3,6 +3,7 @@
 This repo, reproduces the [KorGE bunnymark-fast](https://github.com/korlibs/korge-next/blob/046c9b407f4b8e134d266bd7fcf0773a0a020c4f/samples/bunnymark-fast/src/commonMain/kotlin/main.kt) update code that is slow on Kotlin/Native, it is self-contained, except when marking all the methods as inline (that hurts performance on JVM and JS).
 
 Details here: <https://kotlinlang.slack.com/archives/C3SGXARS6/p1619349974244300>
+Related YouTrack issue: https://youtrack.jetbrains.com/issue/KT-46425
 
 There are three self-contained implementations without external dependencies adjusting inlining `const val` and marking all the methods as `inline`:
 
