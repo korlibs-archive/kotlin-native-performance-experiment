@@ -66,34 +66,29 @@ class BunnyContainer(maxSize: Int) : FSprites(maxSize) {
 
 open class FSprites(val maxSize: Int) {
     var size = 0
-    val data = FBuffer(maxSize * FSprites.STRIDE * 4)
+    val data = FBuffer(maxSize * 8/*FSprites.STRIDE*/ * 4)
 
     @PublishedApi
     internal val f32 = data.f32
 
-    inline fun alloc() = FSprite(size++ * STRIDE)
+    inline fun alloc() = FSprite(size++ * 8/*STRIDE*/)
 
     inline var FSprite.x: Float get() = f32[offset + 0]; set(value) { f32[offset + 0] = value }
     inline var FSprite.y: Float get() = f32[offset + 1]; set(value) { f32[offset + 1] = value }
     inline var FSprite.radiansf: Float get() = f32[offset + 4] ; set(value) { f32[offset + 4] = value }
-
-    companion object {
-        const val STRIDE = 8
-    }
 }
 
 inline fun <T : FSprites> T.fastForEach(callback: T.(sprite: FSprite) -> Unit) {
     var m = 0
     for (n in 0 until size) {
         callback(FSprite(m))
-        m += FSprites.STRIDE
+        m += 8/*FSprites.STRIDE*/
     }
 }
 
 inline class FSprite(val id: Int) {
     inline val offset get() = id
-    inline val index get() = offset / FSprites.STRIDE
-    //val offset get() = index * STRIDE
+    inline val index get() = offset / 8/*FSprites.STRIDE*/
 }
 
 class FBuffer @PublishedApi internal constructor(val mem: MemBuffer, val size: Int = mem.size) {
@@ -111,11 +106,8 @@ class MemBuffer(val data: ByteArray)
 inline val MemBuffer.size: Int get() = data.size
 
 class Float32Buffer(val mbuffer: MemBuffer, val byteOffset: Int, val size: Int) {
-    companion object {
-        const val SIZE = 4
-    }
-    val MEM_OFFSET = byteOffset / SIZE
-    val MEM_SIZE = size / SIZE
+    val MEM_OFFSET = byteOffset / 4/*SIZE*/
+    val MEM_SIZE = size / 4/*SIZE*/
     inline fun getByteIndex(index: Int) = byteOffset + index * 4/*SIZE*/
 }
 inline val Float32Buffer.mem: MemBuffer get() = mbuffer
