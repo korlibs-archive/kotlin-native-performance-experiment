@@ -4,9 +4,9 @@ This repo, reproduces the [KorGE bunnymark-fast](https://github.com/korlibs/korg
 
 There are three self-contained implementations without external dependencies adjusting inlining `const val` and marking all the methods as `inline`:
 
-* Inlined: <https://github.com/korlibs/kotlin-native-performance-experiment/blob/master/src/nativeMain/kotlin/inlined/code.kt>
-* Non-Inlined, but const val is not used: <https://github.com/korlibs/kotlin-native-performance-experiment/blob/master/src/nativeMain/kotlin/noninlinedbutconst/code.kt>
-* Non-Inlined anything and const val is used: <https://github.com/korlibs/kotlin-native-performance-experiment/blob/master/src/nativeMain/kotlin/noninlined/code.kt>
+* [Inlined](https://github.com/korlibs/kotlin-native-performance-experiment/blob/master/src/nativeMain/kotlin/inlined/code.kt)
+* [Non-Inlined, but const val is not used](https://github.com/korlibs/kotlin-native-performance-experiment/blob/master/src/nativeMain/kotlin/noninlinedbutconst/code.kt)
+* [Non-Inlined anything and const val is used](https://github.com/korlibs/kotlin-native-performance-experiment/blob/master/src/nativeMain/kotlin/noninlined/code.kt)
 
 ## Kotlin 1.5.0 (Windows)
 
