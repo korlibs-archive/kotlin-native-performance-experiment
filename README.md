@@ -46,6 +46,17 @@ Executing NON-INLINED...
 Executed NON-INLINED sixty frames in 63.3s
 ```
 
+## Kotlin 1.4.32 (Windows) (Patched) <https://github.com/JetBrains/kotlin/pull/4339>
+
+```
+Executing INLINED...
+Executed INLINED sixty frames in 864ms
+Executing NON-INLINED-BUT-CONST...
+Executed NON-INLINED-BUT-CONST sixty frames in 10.3s
+Executing NON-INLINED...
+Executed NON-INLINED sixty frames in 14.4s
+```
+
 ## Kotlin 1.4.32 (Linux)
 
 <https://github.com/korlibs/kotlin-native-performance-experiment/runs/2478337835?check_suite_focus=true#step:5:84>
