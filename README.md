@@ -14,7 +14,6 @@ There are three self-contained implementations without external dependencies adj
 ## Kotlin 1.5.0 (Windows)
 
 ```
-> Task :runReleaseExecutableNative
 Executing INLINED...
 Executed INLINED sixty frames in 703ms
 Executing NON-INLINED-BUT-CONST...
